@@ -20,6 +20,8 @@ audio.dolby.ds2.hardbypass=false
 qcom.hw.aac.encoder=true
 tunnel.audio.encode=false
 use.voice.path.for.pcm.voip=true
+ro.t-o.quirk.forcesink=sink.primary_output
+ro.t-o.quirk.forcesource=source.record_24_primary_input
 ro.qc.sensors.wl_dis=true
 
 ro.qc.sdk.audio.ssr=false

@@ -734,16 +734,6 @@ on property:init.svc.zygote=restarting
 
 on property:slpi.restart=1
     write /sys/kernel/debug/msm_subsys/slpi restart
-
-on property:init.svc.sensorservice=running
-    start unblock_wakelock
-
-service unblock_wakelock /system/bin/sh /system/etc/unblock_wakelock.sh
-    class main
-    user root
-    group root
-    disabled
-    oneshot
     
 service init_wlan_bt /system/bin/sh /system/etc/init_hcismd_up.sh
     class main
@@ -778,7 +768,7 @@ service minimedia /system/bin/minimediaservice
 #   hack to make recorded video playback work
     setenv LD_PRELOAD /system/lib/libOmxVdec.so
 
-service miniaf /system/bin/miniafservice
+service miniafservice /system/bin/miniafservice
     class core
     user root
     group audio
